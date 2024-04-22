@@ -4,13 +4,7 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextFrom from "./components/TextFrom";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Routes,
-  BrowserRouter,
-} from "react-router-dom";
+
 
 function App() {
   const [mode, setMode] = useState("dark");
@@ -38,14 +32,11 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Navbar title="TextUtills" mode={mode} toggleMode={toggleMode} />
-        <Routes>
-          <Route path="/" element={<TextFrom  mode = {mode} toggleMode = {toggleMode} heading = "Enter the Text to analyze below" alert = {alert} showAlert = {showAlert}/>} />
-          <Route path="/about" element={<About />} />
-        
-        </Routes>
-      </BrowserRouter>
+    <Navbar title="TextUtils"/>
+    {<TextFrom  mode = {mode} toggleMode = {toggleMode} heading = "Enter the Text to analyze below" alert = {alert} showAlert = {showAlert}/>} 
+    {<About />}
+
+       
     </>
   );
 }
